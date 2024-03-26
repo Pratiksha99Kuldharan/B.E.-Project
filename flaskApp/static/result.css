@@ -1,0 +1,55 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container h1,
+.container p {
+    margin: 10px;
+}
+
+.sensitive {
+    color: green;
+}
+
+.resistant {
+    color: red;
+}
+
+.collapsible-btn {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.collapsible-content {
+    display: none;
+    overflow: hidden;
+    background-color: #160202;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    text-align: left;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around; /* Added to display side by side */
+    flex-wrap: wrap; /* Added to handle smaller screens */
+}
+
+.list-container {
+    width: 45%; /* Adjust the width as needed */
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drug Response Predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Itim&family=Michroma&family=Open+Sans&family=Pacifico&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web"></script>
+
+    <style>
+       
+      body nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20vh;
+        margin: 0;
+        
+      }
+
+      h1 {
+        margin-top: 50px;
+        display: flex;
+        color: aliceblue;
+        align-items: center;
+        justify-content: center;
+        font-weight: 1000;
+        font-size: 2.5rem;
+      }
+      label {
+        color: aliceblue;
+        margin-left: 10px;
+      }
+      #input {
+        border-radius: 7px;
+        padding: 10px;
+      }
+
+      #lottie-container {
+        width: 100%;
+        height: 400px; /* Adjust the height as needed */
+        margin-top: 20px; /* Add space below dropdowns */
+        position: relative;
+        z-index: 0;
+      }
+
+      nav {
+        position: relative;
+
+        z-index: 1; /* Set a higher z-index value */
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="michroma-regular">Cancer Cell Line Drug Response</h1>
+
+    <nav class="nav">
+      <menu>
+        <menuitem id="demo1">
+          <a id="selectedCellLine">Cell Lines</a>
+          <menu>
+            {% for item in cell_lines %}
+            <menuitem onclick="updateDropdown('Cell Lines', '{{ item }}')"
+              ><a>{{ item }}</a></menuitem
+            >
+            {% endfor %}
+          </menu>
+        </menuitem>
+        <menuitem id="demo2">
+          <a id="selectedDrug">Drugs</a>
+          <menu>
+            {% for item in drugs %}
+            <menuitem onclick="updateDropdown('Drugs', '{{ item }}')"
+              ><a>{{ item }}</a></menuitem
+            >
+            {% endfor %}
+          </menu>
+        </menuitem>
+      </menu>
+      <form action="/result" method="post" id="predictionForm">
+        <input type="hidden" name="cell_line" id="cellLineInput" value="" />
+        <input type="hidden" name="drug" id="drugInput" value="" />
+
+        <button type="button" onclick="calculateResults()">
+          Calculate Results
+        </button>
+        <label for="threshold">Threshold:</label>
+        <input
+          id="input"
+          type="number"
+          name="threshold"
+          id="threshold"
+          value="3"
+          min="0"
+          step="0.1"
+        />
+      </form>
+    </nav>
+
+    <!-- <div id="lottie-container"></div> -->
+
+    <script>
+      function updateDropdown(type, value) {
+        if (type === "Cell Lines") {
+          document.getElementById("selectedCellLine").innerText = value;
+          document.getElementById("cellLineInput").value = value;
+        } else if (type === "Drugs") {
+          document.getElementById("selectedDrug").innerText = value;
+          document.getElementById("drugInput").value = value;
+        }
+      }
+
+      function calculateResults() {
+        document.getElementById("predictionForm").submit();
+      }
+
+      var animationData = {
+        container: document.getElementById("lottie-container"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "/static/animation.json",
+      };
+
+      var anim = lottie.loadAnimation(animationData);
+    </script>
+  </body>
+</html>

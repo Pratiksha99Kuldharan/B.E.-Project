@@ -1,0 +1,298 @@
+body, html {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   background-color: #ffffff; /* Replace with your desired background color */
+   /* background-image: url('https://www.pharmashots.com/public/images/20211118151854_original_7.webp'); Replace with your image path */
+   background-color: #0D1416;
+   background-size: cover;
+   background-attachment: fixed;
+}
+body * {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.michroma-regular {
+   font-family: "Michroma", sans-serif;
+   font-weight: 2000;
+   font-style: normal;
+ }
+
+ .rubik-moonrocks-regular {
+   font-family: "Rubik Moonrocks", sans-serif;
+   font-weight: 1000;
+   font-style: normal;
+ }
+
+
+/* HTML Nav Styles */
+/* HTML Nav Styles */
+/* HTML Nav Styles */
+nav menuitem {
+  position: relative;
+  display: block;
+  opacity: 0;
+  cursor: pointer;
+}
+
+nav menuitem > menu {
+  position: absolute;
+  pointer-events: none;
+}
+nav > menu {
+  display: flex;
+}
+
+nav > menu > menuitem {
+  pointer-events: all;
+  opacity: 1;
+}
+menu menuitem a {
+  white-space: nowrap;
+  display: block;
+}
+
+menuitem:hover > menu {
+  pointer-events: initial;
+}
+menuitem:hover > menu > menuitem,
+menu:hover > menuitem {
+  opacity: 1;
+}
+nav > menu > menuitem menuitem menu {
+  transform: translateX(100%);
+  top: 0;
+  right: 0;
+}
+
+nav {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+nav a {
+  background: #75f;
+  color: #fff;
+  min-width: 190px;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+  margin: 0px 6px 6px 0px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border-radius: 10px;
+}
+
+nav a:hover:before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+}
+
+nav > menu > menuitem > a + menu:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-top: 10px solid white;
+  left: 12px;
+  top: -40px;
+}
+nav menuitem > menu > menuitem > a + menu:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-left: 10px solid white;
+  top: 20px;
+  left: -180px;
+  transition: opacity 0.6, transform 0s;
+}
+
+nav > menu > menuitem > menu > menuitem {
+  transition: transform 0.6s, opacity 0.6s;
+  transform: translateY(150%);
+  opacity: 0;
+}
+nav > menu > menuitem:hover > menu > menuitem,
+nav > menu > menuitem.hover > menu > menuitem {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+menuitem > menu > menuitem > menu > menuitem {
+  transition: transform 0.6s, opacity 0.6s;
+  transform: translateX(195px) translateY(0%);
+  opacity: 0;
+}
+menuitem > menu > menuitem:hover > menu > menuitem,
+menuitem > menu > menuitem.hover > menu > menuitem {
+  transform: translateX(0) translateY(0%);
+  opacity: 1;
+}
+
+/* button */
+#predictionForm button {
+  background: rgb(85, 255, 130);
+  color: #000000;
+  min-width: 190px;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+  margin: 0px 6px 6px 0px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#predictionForm button:hover:before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+}
+
+/* result.html */
+
+/* blinking span effect */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container h1,
+.container p {
+  margin: 10px;
+}
+
+.sensitive {
+  color: green;
+}
+
+.resistant {
+  color: red;
+}
+
+.collapsible-btn {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.collapsible-content {
+  display: none;
+  overflow: hidden;
+  background-color: #160202;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  text-align: left;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around; /* Added to display side by side */
+  flex-wrap: wrap; /* Added to handle smaller screens */
+}
+
+.list-container {
+  width: 45%; /* Adjust the width as needed */
+}
+
+/* List button */
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 18px;
+    min-width: 196px;
+  }
+}
+
+.button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #007bff; /* Change the background color as needed */
+  color: #fff; /* Change the text color as needed */
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(5, 6, 45);
+  transition: 300ms;
+}

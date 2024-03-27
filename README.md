@@ -1,16 +1,42 @@
-The latest medical research and clinical practice have shown that the effectiveness of existing anti-cancer drugs is highly dependent on the genomic
-characteristics of patients. This implies that the same anti-cancer drugs may
-have vastly different efficacy for different patients suffering from the same
-cancer due to their distinct genomic features.
-Existing systems face limitations in the availability and quality of comprehensive gene expression and drug response datasets, which can impact the
-model generalizability. Some systems focus on short-term drug responses,
-neglecting long-term effects and potential drug resistance.
-Predicting anticancer drug response using gene expression is a cutting-edge
-research area in the field of oncology and precision medicine. This study
-aims to develop predictive models that leverage gene expression profiles to
-determine how individual cancer patients will respond to specific anticancer
-drugs. By analyzing gene expression patterns, biomarkers associated with
-drug response or resistance can be identified, enabling personalized and targeted therapies for patients. The study involves the integration of advanced
-computational methods, bioinformatics tools, and large-scale gene expression
-datasets. The ultimate goal is to enhance cancer treatment efficacy, minimize
-adverse effects, and contribute to the advancement of personalized medicine.
+# Drug Response Predictor
+
+## Overview
+Drug Response Predictor is a web application built using Flask, a Python web framework, and HTML/CSS/JavaScript for the front-end. It allows users to predict the response of cancer cell lines to different drugs based on provided data.
+
+## Key Features
+- **Homepage:** Users can select a specific cancer cell line and a drug from dropdown menus.
+- **Result Page:** Predicted response (sensitive or resistant) for the chosen combination is displayed.
+- **Dynamic Dropdowns:** Dropdown menus dynamically update to show the selected items.
+
+## Technologies Used
+- Flask
+- HTML/CSS/JavaScript
+- Pandas
+- Plotly Express
+- Numpy
+- Scipy
+- Argparse
+
+## Installation
+1. CaDRReS_model.pickle is a file containing an existing model
+drug_response_ic50_test.csv contains an empty matrix where rows are cell lines and columns are features
+cell_line_features.csv contains a feature matrix where rows are the cell lines to be analyzed and columns are features. The features have to match with the features used for training the model.
+
+2. Install the required dependencies:
+- Pandas
+- Plotly Express
+- Numpy
+- Scipy
+- Argparse
+
+## Usage
+1. Navigate to the project directory.
+2. Run the Flask application:
+python app.py
+3. Access the application through the provided URL in the browser.
+
+## Future Improvements
+- Integration with machine learning models for more accurate predictions.
+- Expansion of the dataset to include more cell lines and drugs.
+- Enhancement of the user interface with additional features and visualizations.
+
